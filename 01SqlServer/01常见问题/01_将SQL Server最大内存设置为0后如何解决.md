@@ -12,14 +12,13 @@
 去谷歌找到解决方案
 首先找到mssql的启动目录
 然后 
-> sqlservr.exe -f -s你的实例名 
+> sqlservr.exe -f -s 你的实例名 
 
 我的为:
 
-> sqlservr.exe -f -smssqlSERVER
+> sqlservr.exe -f -s 192.168.1.218\MigHost
 
 -f 参数是以最小配置启动SQL Server实例的意思
-然后打开cmd 执行语句 
 
 > sqlcmd -S SERVERNAME -U USERNAME -P PASSWORD
 

@@ -12,6 +12,7 @@
 ```
 
 #### 方法2 使用WebProxy代理
+[参考](https://stackoverflow.com/questions/16526689/using-a-proxy-with-net-4-5-httpclient)
 ``` csharp
 private HttpClient CreateHttpClient(CommandContext ctx, string sid) {
     var cookies = new CookieContainer();

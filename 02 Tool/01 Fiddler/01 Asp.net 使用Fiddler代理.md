@@ -1,8 +1,7 @@
 
 
 #### 方法1 web.config 添加以下配置
-[参考]([链接网址](https://stackoverflow.com/questions/4629800/how-to-use-fiddler-to-monitor-wcf-service))
-
+[参考](https://stackoverflow.com/questions/4629800/how-to-use-fiddler-to-monitor-wcf-service)
 
 ``` xml
    <system.net>

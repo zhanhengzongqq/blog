@@ -228,3 +228,6 @@ public class FormFileOperationFilter : IOperationFilter
 }
 
 ```
+
+### 其他一些参考资料
+[Asp.net中使用,以及汉化](http://www.cnblogs.com/yanweidie/p/5709113.html)

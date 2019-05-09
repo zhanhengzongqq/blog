@@ -5,7 +5,7 @@
 - [相关截图](#%E7%9B%B8%E5%85%B3%E6%88%AA%E5%9B%BE)
 - [相关代码](#%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81)
   
-  
+
 ### 问题表现
 > 自动化发布之后系统502
 
@@ -21,7 +21,7 @@
 
 ### 相关截图
 
-![Markdown](images/01.png?raw=true)
+![Markdown](/images/0007.png?raw=true)
 
 
 ### 相关代码

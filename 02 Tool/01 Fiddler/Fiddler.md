@@ -53,4 +53,4 @@ private HttpClient CreateHttpClient(CommandContext ctx, string sid) {
 [官方插件](https://www.telerik.com/fiddler/add-ons)
 
 其中 Request to Code 比较好用
-![](images/01.png?raw=true)
+![](/images/0005.png?raw=true)

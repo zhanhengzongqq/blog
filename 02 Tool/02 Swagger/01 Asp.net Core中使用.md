@@ -112,7 +112,7 @@ serviceCollection.AddSwaggerGen(options =>
 ```
 ### 对于多程序集的支持
 
-![图片](images/01.png?raw=true)
+![图片](/images/0006.png?raw=true)
 1. 选中XML文档文件
 2. 设置输出目录到站点程序集，可用相对路径如：..\CCMS.Host\wwwroot\swagger\xmls\CCMS.MainModule.App.xml
 3. 设置SwaggerGen初始化选项

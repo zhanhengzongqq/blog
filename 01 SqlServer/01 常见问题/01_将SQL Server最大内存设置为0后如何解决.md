@@ -4,10 +4,10 @@
 > 最近突然要回滚一个备份 结果发现内存低效率也不够 就手贱给设置了个0 结果变成默认最小内存了。
 
 结果mssql服务直接启动失败 效果是这样的：
-![](/images/01.png?raw=true)
-![](/images/02.png?raw=true)
-![](/images/03.png?raw=true)
-![](/images/04.png?raw=true)
+![](/images/0001.png?raw=true)
+![](/images/0002.png?raw=true)
+![](/images/0003.png?raw=true)
+![](/images/0004.png?raw=true)
 
 去谷歌找到解决方案
 首先找到mssql的启动目录

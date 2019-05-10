@@ -5,11 +5,12 @@
   - [问题总结](#%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93)
   - [代码节选](#%E4%BB%A3%E7%A0%81%E8%8A%82%E9%80%89)
 - [第二次SQL排查](#%E7%AC%AC%E4%BA%8C%E6%AC%A1sql%E6%8E%92%E6%9F%A5)
-  - [改成成原生SQL查询](#%E6%94%B9%E6%88%90%E6%88%90%E5%8E%9F%E7%94%9Fsql%E6%9F%A5%E8%AF%A2)
+  - [改成原生SQL查询](#%E6%94%B9%E6%88%90%E5%8E%9F%E7%94%9Fsql%E6%9F%A5%E8%AF%A2)
   - [改造后的SQL](#%E6%94%B9%E9%80%A0%E5%90%8E%E7%9A%84sql)
   - [再次改造后的SQL](#%E5%86%8D%E6%AC%A1%E6%94%B9%E9%80%A0%E5%90%8E%E7%9A%84sql)
   - [相关图片](#%E7%9B%B8%E5%85%B3%E5%9B%BE%E7%89%87)
   - [相关执行计划](#%E7%9B%B8%E5%85%B3%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92)
+  - [执行计划参考资料](#%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
 ### 第一次问题排查
 #### 问题表现：
 > 点击导出无响应
@@ -44,7 +45,7 @@ return JsonPagedResult(await list.AsPagedAsync(async m => new DisabilityInfoMode
 ```            
 ### 第二次SQL排查
 
-#### 改成成原生SQL查询
+#### 改成原生SQL查询
 > 其中TwoSubsid为10w级别表，下面的速度还是非常慢，其实还是犯了跟上面相同的错误，这个模式的SQL语句还是多次查询的结果，只不过是SQL级别的
 ```sql
 select di.Id, convert(int,(left(di.AreaCode,6))) as Postal,di.AreaCode,di.Name,di.Gender,di.Grade,di.DateBirth,di.DisabilityNo,di.CreateTime,
@@ -101,10 +102,16 @@ where (di.IsDeleted=0 or di.IsDeleted is null)  and (dsi.IsDeleted=0 or dsi.IsDe
 ![](/images/0012.png?raw=true)
 
 #### 相关执行计划
-- 显示更详细的执行计划：SET STATISTICS PROFILE ON;
+> 显示更详细的执行计划：SET STATISTICS PROFILE ON;
+1. Stmt Text：所执行的步骤详细描述，一般从最内层往外看。
+2. Rows：表示该执行步骤所产生的记录数。
+3. Executes：表示某执行步骤被执行的记录数。
+   
 ![](/images/0013.png?raw=true)
 ![](/images/0014.png?raw=true)
 ![](/images/0015.png?raw=true)
   
 
-  
+#### 执行计划参考资料
+- [了解Sql Server的执行计划](https://www.cnblogs.com/mcgrady/p/4174185.html)      
+- [MSSQLSERVER执行计划详解](http://www.cnblogs.com/knowledgesea/p/5005163.html)

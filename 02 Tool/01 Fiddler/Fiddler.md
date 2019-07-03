@@ -29,6 +29,7 @@ OnBeforeRequest 方法内添加代码
       
 ```
 
+
 ###  Fiddler捕获 Asp.net 程序中发送的请求的几种实现
 
 #### 方法1 web.config 添加以下配置
